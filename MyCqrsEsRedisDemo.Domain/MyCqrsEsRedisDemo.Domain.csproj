@@ -30,11 +30,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="CQRSlite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CqrsLite.0.18.3\lib\net452\CQRSlite.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net46\StackExchange.Redis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,19 +61,27 @@
     <Compile Include="Commands\CreateEmployeeCommand.cs" />
     <Compile Include="Commands\CreateLocationCommand.cs" />
     <Compile Include="Commands\RemoveEmployeeFromLocationCommand.cs" />
+    <Compile Include="EventHandlers\EmployeeEventHandler.cs" />
+    <Compile Include="EventHandlers\LocationEventHandler.cs" />
     <Compile Include="Events\BaseEvent.cs" />
     <Compile Include="Events\EmployeeCreatedEvent.cs" />
     <Compile Include="Events\EmployeeRemovedFromLocationEvent.cs" />
     <Compile Include="Events\LocationCreatedEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadModel\EmployeeRM.cs" />
+    <Compile Include="ReadModel\LocationRM.cs" />
+    <Compile Include="ReadModel\Repositories\BaseRepository.cs" />
+    <Compile Include="ReadModel\Repositories\EmployeeRepository .cs" />
+    <Compile Include="ReadModel\Repositories\Interfaces\IBaseRepository.cs" />
+    <Compile Include="ReadModel\Repositories\Interfaces\IEmployeeRepository.cs" />
+    <Compile Include="ReadModel\Repositories\Interfaces\ILocationRepository.cs" />
+    <Compile Include="ReadModel\Repositories\LocationRepository .cs" />
     <Compile Include="WriteModel\Employee.cs" />
     <Compile Include="Events\EmployeeAssignedToLocationEvent.cs" />
     <Compile Include="WriteModel\Location.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EventHandlers\" />
     <Folder Include="EventStore\" />
-    <Folder Include="ReadModel\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

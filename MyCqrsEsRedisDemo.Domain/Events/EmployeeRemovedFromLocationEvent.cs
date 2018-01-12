@@ -2,7 +2,7 @@
 
 namespace MyCqrsEsRedisDemo.Domain.Events
 {
-    internal class EmployeeRemovedFromLocationEvent : BaseEvent
+    public class EmployeeRemovedFromLocationEvent : BaseEvent
     {
         public readonly int _locationId;
         public readonly int employeeId;
